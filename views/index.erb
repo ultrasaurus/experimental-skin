@@ -13,10 +13,36 @@ $(document).ready(function(){
         fx:"show",
         fxspeed:null
     });
+  $(".wizard li a .section-title").each(function(index, elem) {
+    console.log(index);
+    console.log(elem)
+    // &#11044 filled circle
+    // &#9312; &#9313; &#9314; (1) (2) (3)
+    $(elem).before("<span class='filled-cirlce'>&#11044</span><span class='step-num'>&#931"+(2+index)+";</span>")
+  });
+
 });
 
 </script>   
 <style type="text/css">
+.wizard .step-num {
+  display:block;
+  text-align:center;
+}
+.wizard .filled-cirlce {
+  display:block;
+  text-align:center;
+  height:0px;
+  color: #fff;
+}
+
+
+.wizard .section-title {
+  display:block;
+  text-align:center;
+}
+
+
 .wizard legend {
   display: none;
 }
@@ -29,7 +55,8 @@ $(document).ready(function(){
 .wizard fieldset {
   clear:both;
   height: 180px;
-  padding-top: 30px;
+  padding-top: 40px;
+  border: 1px solid #ccf;
 }
 .wizard p {
   margin: 0px;
@@ -41,22 +68,25 @@ $(document).ready(function(){
 }
 
 .wizard li {
+  height: 0px;
+  width: 100px;
   list-style-type: none;  
   float:left;
   padding:10px;
 }
 
-.wizard li a:link {
+.wizard li a:link,visited {
   text-decoration:none;
+  color:#33e;
 }
 </style>
 </head>
 
 <body>
-<h1>Wizard Interface Experiment</h1>
+<h1>Wizard Interface Experiment &#9312; &#9313; &#9314;</h1>
 <div class="wizard">
 <fieldset>
-<legend><span class="section-title">Saluations</span></legend>
+<legend><span class="section-title">Salutations</span></legend>
 <div class="form-item">
   <label>Greeting</label>
   <input type="text" size="60"/>
