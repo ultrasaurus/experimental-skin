@@ -2,124 +2,46 @@
 <head>
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/jquery-accessible-tabs/js/jquery.tabs.js"></script>
+<script src="wizard.js"></script>
+<link href="wizard.css" type="text/css" rel="stylesheet"/>
+
+<script src="style123.js"></script>
+<link href="style123.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript">
-
-$(document).ready(function(){
-  console.log('ready');
-    $(".wizard").accessibleTabs({
-        tabhead:'legend',
-        tabbody:'fieldset',
-        currentInfoText:'',
-        fx:"show",
-        fxspeed:null
-    });
-  $(".wizard li a .section-title").each(function(index, elem) {
-    console.log(index);
-    console.log(elem)
-    // &#11044 filled circle
-    // &#9312; &#9313; &#9314; (1) (2) (3)
-    $(elem).before("<span class='filled-cirlce'>&#11044</span><span class='step-num'>&#931"+(2+index)+";</span>")
-  });
-  $(".wizard li").hover(
-    function(evt) {
-      $(evt.currentTarget).addClass('hover');
-    },
-    function(evt) {
-      $(evt.currentTarget).removeClass('hover');
-    }
-  );
-});
-
-</script>   
-<style type="text/css">
-.wizard {
-  font-family: sans-serif;
-  font-size: 12px;
+function setStyle(name) {
+  $(".wizard").removeClass('style123')
+  $('.step-num').css('display','none');
+  $('.filled-circle').css('display','none');
   
+  if (name != "none") {
+    $(".wizard").addClass(name);
+    $('.step-num').css('display','block');
+    $('.filled-circle').css('display','block');
+  } 
 }
 
-.wizard .step-num {
-  display:block;
-  text-align:center;
-  font-family: serif;
-  font-size: 18px;
-  color: #ccf
-}
-.wizard .filled-cirlce {
-  display:block;
-  text-align:center;
-  height:0px;
-  color: #fff;
-  font-size: 18px;
-}
+  $(document).ready(function(){
+    setStyle('none');
+    $('#switch').change(
+      function(){
+        style_name = $(this).val();
+        setStyle(style_name);
+    });
+  });
+</script>
 
-.wizard .section-title {
-  display:block;
-  text-align:center;
-  font-size: 12px;
-  color: #ccf  
-}
-
-.wizard .hover .step-num  {
-  color: #33f;
-}
-
-.wizard .hover .section-title  {
-  color: #33f;
-}
-
-.wizard .current .step-num  {
-  color: #00d;
-}
-
-.wizard .current .section-title  {
-  color: #00d;
-}
-
-.wizard legend {
-  display: none;
-}
-.wizard label {
-  float:left;
-  text-align:right;
-  width:75px;
-  margin-right:4px;
-  padding-top:5px;
-}
-.wizard fieldset {
-  clear:both;
-  height: 140px;
-  width: 440px;
-  padding-top: 40px;
-  border: 1px solid #ccf;
-}
-.wizard p {
-  margin: 0px;
-}
-
-.wizard ul {
-  margin:0px;
-  padding: 0px;
-}
-
-.wizard li {
-  height: 3px;
-  width: 100px;
-  list-style-type: none;  
-  float:left;
-  padding:10px;
-}
-
-.wizard li a:link,visited {
-  text-decoration:none;
-  color:#33e;
-}
-</style>
 </head>
 
 <body>
-<h1>Wizard Interface Experiment &#9312; &#9313; &#9314;</h1>
-<div class="wizard">
+<h1>Wizard Interface Experiment</h1>
+
+<select id="switch">
+    <option value="none">None</option>
+    <option value="style123">&#9312; &#9313; &#9314;</option>
+</select>
+<p>&nbsp;</p>
+
+<div class="wizard style123">
 <fieldset>
 <legend><span class="section-title">Salutations</span></legend>
 <div class="form-item">

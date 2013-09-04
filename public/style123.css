@@ -1,0 +1,38 @@
+.style123 .step-num {
+  display:block;
+  text-align:center;
+  font-family: serif;
+  font-size: 18px;
+  color: #ccf
+}
+.style123 .filled-circle {
+  display:block;
+  text-align:center;
+  height:0px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.style123 .section-title {
+  display:block;
+  text-align:center;
+  font-size: 12px;
+  color: #ccf  
+}
+
+.style123 .hover .step-num  {
+  color: #33f;
+}
+
+.style123 .hover .section-title  {
+  color: #33f;
+}
+
+.style123 .current .step-num  {
+  color: #00d;
+}
+
+.style123 .current .section-title  {
+  color: #00d;
+}
+
