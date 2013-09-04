@@ -20,28 +20,61 @@ $(document).ready(function(){
     // &#9312; &#9313; &#9314; (1) (2) (3)
     $(elem).before("<span class='filled-cirlce'>&#11044</span><span class='step-num'>&#931"+(2+index)+";</span>")
   });
-
+  $(".wizard li").hover(
+    function(evt) {
+      $(evt.currentTarget).addClass('hover');
+    },
+    function(evt) {
+      $(evt.currentTarget).removeClass('hover');
+    }
+  );
 });
 
 </script>   
 <style type="text/css">
+.wizard {
+  font-family: sans-serif;
+  font-size: 12px;
+  
+}
+
 .wizard .step-num {
   display:block;
   text-align:center;
+  font-family: serif;
+  font-size: 18px;
+  color: #ccf
 }
 .wizard .filled-cirlce {
   display:block;
   text-align:center;
   height:0px;
   color: #fff;
+  font-size: 18px;
 }
-
 
 .wizard .section-title {
   display:block;
   text-align:center;
+  font-size: 12px;
+  color: #ccf  
 }
 
+.wizard .hover .step-num  {
+  color: #33f;
+}
+
+.wizard .hover .section-title  {
+  color: #33f;
+}
+
+.wizard .current .step-num  {
+  color: #00d;
+}
+
+.wizard .current .section-title  {
+  color: #00d;
+}
 
 .wizard legend {
   display: none;
@@ -51,10 +84,12 @@ $(document).ready(function(){
   text-align:right;
   width:75px;
   margin-right:4px;
+  padding-top:5px;
 }
 .wizard fieldset {
   clear:both;
-  height: 180px;
+  height: 140px;
+  width: 440px;
   padding-top: 40px;
   border: 1px solid #ccf;
 }
@@ -68,7 +103,7 @@ $(document).ready(function(){
 }
 
 .wizard li {
-  height: 0px;
+  height: 3px;
   width: 100px;
   list-style-type: none;  
   float:left;
