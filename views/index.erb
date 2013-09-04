@@ -7,17 +7,19 @@
 
 <script src="style123.js"></script>
 <link href="style123.css" type="text/css" rel="stylesheet"/>
+<link href="styletab.css" type="text/css" rel="stylesheet"/>
+
 <script type="text/javascript">
 function setStyle(name) {
-  $(".wizard").removeClass('style123')
-  $('.step-num').css('display','none');
-  $('.filled-circle').css('display','none');
+  style123_remove();
+  $(".wizard").removeClass('style123 styletab')
   
   if (name != "none") {
     $(".wizard").addClass(name);
-    $('.step-num').css('display','block');
-    $('.filled-circle').css('display','block');
-  } 
+  }
+  if (name == "style123") {
+    style123_init();
+  }
 }
 
   $(document).ready(function(){
@@ -37,11 +39,12 @@ function setStyle(name) {
 
 <select id="switch">
     <option value="none">None</option>
+    <option value="styletab">traditional tab</option>
     <option value="style123">&#9312; &#9313; &#9314;</option>
 </select>
 <p>&nbsp;</p>
 
-<div class="wizard style123">
+<div class="wizard">
 <fieldset>
 <legend><span class="section-title">Salutations</span></legend>
 <div class="form-item">
