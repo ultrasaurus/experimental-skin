@@ -1,9 +1,31 @@
 <html>
+<head>
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="bower_components/jquery-accessible-tabs/js/jquery.tabs.js"></script>
+<script type="text/javascript">
 
+$(document).ready(function(){
+  console.log('ready');
+    $(".wizard").accessibleTabs({
+        tabhead:'legend',
+        tabbody:'fieldset',
+        currentInfoText:'',
+        fx:"show",
+        fxspeed:null
+    });
+});
+
+</script>   
+<style type="text/css">
+legend {
+  display: none;
+}
+</style>
+</head>
 
 <body>
 <h1>Wizard Interface Experiment</h1>
-<div class="content">
+<div class="wizard">
 <fieldset>
 <legend><span class="section-title">Saluations</span></legend>
 <div class="form-item">
