@@ -38,7 +38,7 @@
   padding:10px;
 }
 
-.wizard li a:link,visited {
+.wizard li a {
   text-decoration:none;
   color:#33e;
 }

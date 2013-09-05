@@ -8,11 +8,12 @@
 <script src="style123.js"></script>
 <link href="style123.css" type="text/css" rel="stylesheet"/>
 <link href="styletab.css" type="text/css" rel="stylesheet"/>
+<link href="arrows.css" type="text/css" rel="stylesheet"/>
 
 <script type="text/javascript">
 function setStyle(name) {
   style123_remove();
-  $(".wizard").removeClass('style123 styletab')
+  $(".wizard").removeClass('style123 styletab arrows')
   
   if (name != "none") {
     $(".wizard").addClass(name);
@@ -40,11 +41,12 @@ function setStyle(name) {
 <select id="switch">
     <option value="none">None</option>
     <option value="styletab">traditional tab</option>
+    <option value="arrows">arrows</option>
     <option value="style123">&#9312; &#9313; &#9314;</option>
 </select>
 <p>&nbsp;</p>
 
-<div class="wizard">
+<div class="wizard arrows">
 <fieldset>
 <legend><span class="section-title">Salutations</span></legend>
 <div class="form-item">
