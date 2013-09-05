@@ -1,5 +1,5 @@
 .arrows ul {
-  margin: 12px;
+  margin: 2px;
 }
 
 .arrows li {
@@ -18,9 +18,11 @@
   border-bottom: 12px solid #9cf;
 }
 
+
 .arrows li.current a:after  {
   border-left:12px solid #9cf;
 }
+
 
 .arrows li a {
     position:relative;
@@ -59,3 +61,11 @@
     top: 0px;
     right: -12px;
 }
+
+.arrows .tabs-list .first a:before {
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+
+
